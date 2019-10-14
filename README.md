@@ -2,7 +2,7 @@
 Docker-based XeLaTeX documents compilation.
 Download the compilation script:
 ```
-wget https://github.com/iamm-templates/latex-docker/raw/master/latexdockercmd.sh -O latexdockercmd.sh
+wget https://github.com/iamm-templates/xelatex-docker/raw/master/latexdockercmd.sh -O latexdockercmd.sh
 chmod a+x latexdockercmd.sh
 ```
 To compile the document `main.tex` just run the command (assuming you have Docker installed)
