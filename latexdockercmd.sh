@@ -1,4 +1,4 @@
 #!/bin/sh
 IMAGE=tiulpin/iamm-templates:latest
 docker pull "$IMAGE"
-exec docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$PWD":/data "$IMAGE" "$@"
+exec docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$PWD":/data "$IMAGE" "latexmk -cd -f -interaction=batchmode -pdf"
