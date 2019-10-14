@@ -17,10 +17,6 @@ RUN wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz; \
 	rm install-tl-unx.tar.gz
 
 ENV PATH="/usr/local/texlive/2019/bin/x86_64-linux:${PATH}"
-
 ENV HOME /data
 WORKDIR /data
-
-RUN tlmgr install lstfiracode polyglossia minted fvextra ifplatform cancel xwatermark catoptions ltxkeys biblatex-gost
-
 VOLUME ["/data"]
