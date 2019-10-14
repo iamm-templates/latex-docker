@@ -5,6 +5,7 @@
 # python         3.6    (apt)
 # wget           latest (apt)
 # perl           latest (apt)
+# unzip          latest (apt)
 # fonts-config   latest (apt)
 # fonts-cmu      latest (apt)
 # fonts-firasans latest (github)
@@ -18,14 +19,14 @@ ENV DEBIAN_FRONTEND noninteractive
 # update the system
 RUN apt-get -qq update
 # install required in our templates tools and fonts
-RUN apt-get -y -q install wget perl python python-pip libfontconfig fonts-cmu fonts-firacode
+RUN apt-get -y -q install wget perl python python-pip libfontconfig fonts-cmu fonts-firacode unzip
 RUN pip install pygments
 RUN wget https://github.com/bBoxType/FiraSans/archive/master.zip -O master.zip; \
     unzip master.zip; \
-    sudo mkdir -p /usr/share/fonts/opentype/fira; \
-    sudo mkdir -p /usr/share/fonts/truetype/fira; \
-    sudo find FiraSans-master/ -name "*.otf" -exec cp {} /usr/share/fonts/opentype/fira/ \; \
-    sudo find FiraSans-master/ -name "*.ttf" -exec cp {} /usr/share/fonts/truetype/fira/ \;
+    mkdir -p /usr/share/fonts/opentype/fira; \
+    mkdir -p /usr/share/fonts/truetype/fira; \
+    find FiraSans-master/ -name "*.otf" -exec cp {} /usr/share/fonts/opentype/fira/ \; \
+    find FiraSans-master/ -name "*.ttf" -exec cp {} /usr/share/fonts/truetype/fira/ \;
 
 # install TexLive with scheme-full
 RUN wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz; \
