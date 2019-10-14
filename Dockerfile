@@ -11,7 +11,7 @@
 # texlive	 2019   (ctan)
 # pygments       latest (pip)
 # ==================================================================
-FROM ubuntu:latest
+FROM ubuntu:bionic
 MAINTAINER Viktor Tiulpin <viktor@tiulp.in>
 ENV DEBIAN_FRONTEND noninteractive
 
