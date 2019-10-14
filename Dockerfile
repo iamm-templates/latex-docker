@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # update the system
 RUN apt-get -qq update
-RUN apt-get -y -q install wget perl python python-pip libfontconfig
+RUN apt-get -y -q install wget perl python python-pip libfontconfig fonts-cmu
 RUN pip install pygments
 
 # install TexLive with scheme-full
