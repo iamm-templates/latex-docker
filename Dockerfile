@@ -20,10 +20,10 @@ RUN apt-get -qq update
 # install required in our templates tools and fonts
 RUN apt-get -y -q install wget perl python python-pip libfontconfig fonts-cmu fonts-firacode
 RUN pip install pygments
-RUN wget https://github.com/bBoxType/FiraSans/archive/master.zip -O master.zip \
-    unzip master.zip \
-    sudo mkdir -p /usr/share/fonts/opentype/fira \
-    sudo mkdir -p /usr/share/fonts/truetype/fira \
+RUN wget https://github.com/bBoxType/FiraSans/archive/master.zip -O master.zip; \
+    unzip master.zip; \
+    sudo mkdir -p /usr/share/fonts/opentype/fira; \
+    sudo mkdir -p /usr/share/fonts/truetype/fira; \
     sudo find FiraSans-master/ -name "*.otf" -exec cp {} /usr/share/fonts/opentype/fira/ \; \
     sudo find FiraSans-master/ -name "*.ttf" -exec cp {} /usr/share/fonts/truetype/fira/ \;
 
